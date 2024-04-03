@@ -4,24 +4,40 @@
             <div class="content">
                 <h1>Chen Yen-Cheng</h1>
                 <p>Student at CS department of NTHU</p>
-                <button>Contact Now</button>
+                <img id="me" src="../assets/me.jpg">
+                <button>See my works</button>
+
             </div>
         </div>
     </div>
     <div class="home">
-        <h1>Home</h1>
-        <p>Welcome to my website</p>
-        <p>Click the button below to learn more about me</p>
-        <router-link to="/about">About me</router-link>
+        <!-- <h1>works</h1> -->
+        
+        <h2>Contact me</h2>
+        <div class="items">
+            <li v-for="item in items" :key="item.id">
+                <a :href="item.url" target="_blank">
+                    <img :src="item.img" class="icon"/>
+
+                </a>
+            </li>
+        </div>
     </div>
+    <footer>
+        <p>© 2022 Chen Yen-Cheng</p>    
+    </footer>
+
 
 </template>
 
 <script>
+
+
 export default {
     name: 'Home',
     mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    
+        window.addEventListener('scroll', this.handleScroll);
     },
     destroyed() {
         window.removeEventListener('scroll', this.handleScroll);
@@ -29,8 +45,18 @@ export default {
     methods: {
         handleScroll() {
             const offset = window.pageYOffset;
-            const background = document.querySelector('.parallax-background');
-            background.style.transform = `translateY(${offset * 0.5}px)`;
+            const background = document.querySelector('.background-img');
+            background.style.transform = `translateY(${offset * 0.3}px)`;
+        }
+    },
+    data() {
+        return {
+            items: [
+                { id: 1, title: 'discord', url: 'https://discord.com/'  , img: 'src/assets/discord.png'},
+                { id: 2, title: 'Github', url: '', img: 'src/assets/github.png'},
+                { id: 3, title: 'Instagram' , url: '', img: 'src/assets/ig.png'},
+                { id: 4, title: 'X', url: '',img: 'src/assets/x.png'},
+            ]
         }
     }
 }
@@ -39,44 +65,91 @@ export default {
 <style>
 
 .home {
-    background-color: #cebdbd;
-    color: rgb(201, 34, 34);
-    padding: 10px;
-    height: 100vh;
+    background-color: #c6e4fd;
+    color: #0066cc;
+    padding: 50px;
+    height:60vh;
+    border-radius: 10px;
     text-align: center;
 }
 
-
-.home a.router-link-exact-active {
-    color: #42b963;
+.home h1 {
+    font-size: larger;
+    font-weight: bold;
 }
 
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    text-decoration: none;
+    color: #0066cc;
+    padding: auto;
+}
+
+.items li {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+    transition: all 0.3s;
+}
+
+.icon {
+    width: 100px;
+
+
+}
+
+
 .parallax-container {
+  padding-top: 60px;
   position: relative;
-  overflow-y: scroll;
   height: 70vh;
+  
+}
+
+#me {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+    
 }
 
 .background-img {
+    padding-bottom: 60px;
     position: fixed;
     background-image: url('../assets/background.jpg');
     background-size: cover;
-    background-position: center;  
-    position: fixed; 
+    background-position: bottom;  
     width: 100%; 
-    height: 100%; 
-    top: 0;
+    height: 120%; 
+    bottom: 0;
     left: 0;
     z-index: -1;
-    
 }
 
 
 .content {
+    display: flex;
+    flex-direction: column;
     color: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    margin-top: 5vh;
+    margin-top: 32vh;
     text-align: center;
+    align-items: center;
+}
+
+#contacts {
+    display: flex;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    align-items: center;
 }
 
 .content p {
@@ -93,15 +166,31 @@ button {
   padding: 10px 20px;
   margin-top: 20px;
   font-size: 1em;
-  color: #fff;
-  background-color: #0066cc;
+  color: #04498f;
+  text-transform: uppercase;
+;
+  background-color: #5ae2e2;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0055bb;
+  background-color: #415546;
 }
+
+
+footer {
+    background-color: #c6e4fd;
+    color: #0066cc;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
 
 </style>
