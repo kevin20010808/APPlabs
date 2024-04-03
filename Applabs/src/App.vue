@@ -7,21 +7,24 @@
     </nav>
     <router-view/>
   </div>
-  <p>Home !</p>
+
 </template>
 
 <script>
 export default {
   name: 'App'
 }
+
 </script>
 
 <style>
 nav {
-  background-color: #333;
+  background-color: #ffffff;
   color: rgb(175, 36, 36);
-  padding: 10px;
+  padding: 30px;
+  
   text-align: center;
+  font-size: larger;
 }
 
 nav a {
@@ -30,7 +33,8 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b963;
+  color: #072710;
+  font: bold;
 }
 
 </style>
