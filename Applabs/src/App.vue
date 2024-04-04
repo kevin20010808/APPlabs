@@ -2,7 +2,8 @@
   <div id="app">
     <nav class="navbar">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About us</router-link> |
+      <router-link to="/about">About me</router-link> |
+      <router-link to="/works">Works</router-link>
       <!-- other pages -->
     </nav>
     <router-view/>

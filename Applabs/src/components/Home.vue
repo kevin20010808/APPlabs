@@ -13,7 +13,7 @@
     <div class="home">
         <!-- <h1>works</h1> -->
         
-        <h2>Contact me</h2>
+        <h1>Contact me</h1>
         <div class="items">
             <li v-for="item in items" :key="item.id">
                 <a :href="item.url" target="_blank">
@@ -53,7 +53,7 @@ export default {
         return {
             items: [
                 { id: 1, title: 'discord', url: 'https://discord.com/'  , img: 'src/assets/discord.png'},
-                { id: 2, title: 'Github', url: '', img: 'src/assets/github.png'},
+                { id: 2, title: 'Github', url: 'https://github.com/kevin20010808', img: 'src/assets/github.png'},
                 { id: 3, title: 'Instagram' , url: '', img: 'src/assets/ig.png'},
                 { id: 4, title: 'X', url: '',img: 'src/assets/x.png'},
             ]
@@ -67,37 +67,37 @@ export default {
 .home {
     background-color: #c6e4fd;
     color: #0066cc;
-    padding: 50px;
+    padding: 10px;
     height:60vh;
     border-radius: 10px;
     text-align: center;
 }
 
 .home h1 {
-    font-size: larger;
+    margin-top: 60px;
+    font-size: 2em;
     font-weight: bold;
 }
 
 .items {
     display: flex;
-    justify-content: center;
+    margin-top: 35vh;
     align-items: center;
+    justify-content: center;
     list-style-type: none;
     text-decoration: none;
     color: #0066cc;
-    padding: auto;
 }
 
 .items li {
-    margin: 20px;
-    padding: 20px;
+    margin: 0 15px;
     border-radius: 10px;
-
     transition: all 0.3s;
+
 }
 
 .icon {
-    width: 100px;
+    width: 50px;
 
 
 }
