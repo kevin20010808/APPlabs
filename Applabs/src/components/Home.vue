@@ -1,26 +1,40 @@
 <template>
     <div class="parallax-container">
         <div class="background-img">
-            <div class="content">
-                <h1>Chen Yen-Cheng</h1>
-                <p>Student at CS department of NTHU</p>
-                <img id="me" src="../assets/me.jpg">
-                <button>See my works</button>
-
+            <div class="set">
+                <div class="content">
+                    <h1>Chen Yen-Cheng</h1>
+                    <p>Student at CS department of NTHU</p>
+                </div>
+                <div id="profile-img">
+                    <img id="me" src="../assets/me.jpg">
+                    <!-- <button>See my works</button> -->
+                </div>
             </div>
         </div>
     </div>
     <div class="home">
+        <div class="works">
+            <h1>Works</h1>
+            <div class="works">
+                <li v-for="work in works" :key="work.id">
+                    <a :href="work.url" target="_blank">
+                        <img :src="work.img" class="icon"/>
+                    </a>
+                </li>
+            </div>
+        </div>
         <!-- <h1>works</h1> -->
-        
-        <h1>Contact me</h1>
-        <div class="items">
-            <li v-for="item in items" :key="item.id">
-                <a :href="item.url" target="_blank">
-                    <img :src="item.img" class="icon"/>
+        <div class="contact">
+            <h1>Contact me</h1>
+            <div class="items">
+                <li v-for="item in items" :key="item.id">
+                    <a :href="item.url" target="_blank">
+                        <img :src="item.img" class="icon"/>
 
-                </a>
-            </li>
+                    </a>
+                </li>
+            </div>
         </div>
     </div>
     <footer>
@@ -79,9 +93,16 @@ export default {
     font-weight: bold;
 }
 
+.set {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    color: white;
+}
+
 .items {
     display: flex;
-    margin-top: 35vh;
     align-items: center;
     justify-content: center;
     list-style-type: none;
@@ -93,13 +114,10 @@ export default {
     margin: 0 15px;
     border-radius: 10px;
     transition: all 0.3s;
-
 }
 
 .icon {
     width: 50px;
-
-
 }
 
 
@@ -111,13 +129,13 @@ export default {
 }
 
 #me {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
-    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* put in right center*/
+    margin-left: 50px;
+    margin-top: 300px;
 }
 
 .background-img {
@@ -133,6 +151,9 @@ export default {
     z-index: -1;
 }
 
+.profile-img {
+    display: flex;
+}
 
 .content {
     display: flex;
@@ -162,13 +183,17 @@ export default {
     font-weight: bold;
 }
 
+.contact{
+    margin-top: 30vh;
+    margin-bottom: auto;
+}
+
 button {
   padding: 10px 20px;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 1em;
   color: #04498f;
   text-transform: uppercase;
-;
   background-color: #5ae2e2;
   border: none;
   border-radius: 5px;
