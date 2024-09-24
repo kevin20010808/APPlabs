@@ -30,7 +30,7 @@ export default {
 }
 
 .navbar {
-  background-color: #c6e4fd;
+  background-color: #E0E0E2;
   padding: 20px;
   margin: 0%  0% 2% 0% ;
   text-align: center;
@@ -45,7 +45,7 @@ export default {
 
 .navbar a{
   text-decoration: none;
-  color: #0066cc;
+  color: #56494C;
   margin: 0 10px;
 }
 

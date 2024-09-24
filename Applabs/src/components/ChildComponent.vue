@@ -10,7 +10,6 @@
   
   export default {
     setup() {
-      // 使用 inject 接收來自父元件的主題顏色
       const themeColor = inject('themeColor');
   
       return {

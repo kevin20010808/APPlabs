@@ -16,15 +16,12 @@
       ChildComponent,
     },
     setup() {
-      // 定義一個響應式變量來保存主題顏色
       const themeColor = ref('lightblue');
   
-      // 切換主題顏色的方法
       const toggleTheme = () => {
         themeColor.value = themeColor.value === 'lightblue' ? 'lightcoral' : 'lightblue';
       };
   
-      // 使用 provide 將主題顏色提供給子元件
       provide('themeColor', themeColor);
   
       return {

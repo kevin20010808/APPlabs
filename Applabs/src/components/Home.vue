@@ -16,7 +16,7 @@
     <div class="home">
         <div class="works">
             <h1>Works</h1>
-            <div class="works">
+            <div class="theworks">
                 <li v-for="work in works" :key="work.id">
                     <a :href="work.url" target="_blank">
                         <img :src="work.img" class="icon"/>
@@ -34,6 +34,10 @@
 
                     </a>
                 </li>
+            </div>
+            <div class="mail">
+                <p>E-mail: kevin20010808@gmail.com </p>
+                <p>Phone Number: (+886) 965-651-317</p>
             </div>
         </div>
     </div>
@@ -79,8 +83,8 @@ export default {
 <style>
 
 .home {
-    background-color: #c6e4fd;
-    color: #0066cc;
+    background-color: #E0E0E2;
+    color: #56494C;
     padding: 10px;
     height:60vh;
     border-radius: 10px;
@@ -107,7 +111,7 @@ export default {
     justify-content: center;
     list-style-type: none;
     text-decoration: none;
-    color: #0066cc;
+    color: #56494C;
 }
 
 .items li {
@@ -141,7 +145,8 @@ export default {
 .background-img {
     padding-bottom: 60px;
     position: fixed;
-    background-image: url('../assets/background.jpg');
+    background-color: #B5BAD0;
+    /* background-image: url('../assets/background.jpg'); */
     background-size: cover;
     background-position: bottom;  
     width: 100%; 
@@ -158,20 +163,14 @@ export default {
 .content {
     display: flex;
     flex-direction: column;
-    color: rgba(255, 255, 255, 0.8);
+    color: #56494C;
     padding: 20px;
     margin-top: 32vh;
     text-align: center;
     align-items: center;
+    line-height:0.3;
 }
 
-#contacts {
-    display: flex;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    text-align: center;
-    align-items: center;
-}
 
 .content p {
     font-size: 1em;
@@ -184,17 +183,25 @@ export default {
 }
 
 .contact{
-    margin-top: 30vh;
+    margin-top: 27vh;
     margin-bottom: auto;
+}
+.mail {
+    font-size: 1em;
+    letter-spacing: 2px;
+    line-height: 0.3;
+    display: flex;
+    justify-content: space-around;
+
 }
 
 button {
   padding: 10px 20px;
   margin-top: 30px;
   font-size: 1em;
-  color: #04498f;
+  color: #56494C;
   text-transform: uppercase;
-  background-color: #5ae2e2;
+  background-color: #E0E0E2;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -206,8 +213,8 @@ button:hover {
 
 
 footer {
-    background-color: #c6e4fd;
-    color: #0066cc;
+    background-color: #E0E0E2;
+    color: #56494C;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
