@@ -3,12 +3,11 @@
         <div class="background-img">
             <div class="set">
                 <div class="content">
-                    <h1>Chen Yen-Cheng</h1>
-                    <p>Student at CS department of NTHU</p>
+                    <h1>{{ info.name }}</h1>
+                    <p>{{ info.title}} </p>
                 </div>
                 <div id="profile-img">
-                    <img id="me" src="../assets/me.jpg">
-                    <!-- <button>See my works</button> -->
+                    <img id="me" :src=info.img>
                 </div>
             </div>
         </div>
@@ -19,65 +18,59 @@
             <div class="theworks">
                 <li v-for="work in works" :key="work.id">
                     <a :href="work.url" target="_blank">
-                        <img :src="work.img" class="icon"/>
+                        <img :src="work.s" class="icon"/>
                     </a>
                 </li>
             </div>
         </div>
-        <!-- <h1>works</h1> -->
         <div class="contact">
             <h1>Contact me</h1>
-            <div class="items">
-                <li v-for="item in items" :key="item.id">
+            <div class="icon_items">
+                <li v-for="item in icon_items" :key="item.id">
                     <a :href="item.url" target="_blank">
                         <img :src="item.img" class="icon"/>
-
                     </a>
                 </li>
             </div>
-            <div class="mail">
-                <p>E-mail: kevin20010808@gmail.com </p>
-                <p>Phone Number: (+886) 965-651-317</p>
+            <div class="mail" >
+                <p >E-mail: {{info.email}} </p>
+                <p>Phone Number: {{ info.phone }}</p>
             </div>
         </div>
     </div>
     <footer>
-        <p>© 2022 Chen Yen-Cheng</p>    
+        <p>© 2022 {{ info.name }}</p>    
     </footer>
 
 
 </template>
 
-<script>
+<script setup>
 
-
-export default {
-    name: 'Home',
-    mounted() {
-    
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    destroyed() {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
-    methods: {
-        handleScroll() {
-            const offset = window.pageYOffset;
-            const background = document.querySelector('.background-img');
-            background.style.transform = `translateY(${offset * 0.3}px)`;
-        }
-    },
-    data() {
-        return {
-            items: [
-                { id: 1, title: 'discord', url: 'https://discord.com/'  , img: 'src/assets/discord.png'},
-                { id: 2, title: 'Github', url: 'https://github.com/kevin20010808', img: 'src/assets/github.png'},
-                { id: 3, title: 'Instagram' , url: '', img: 'src/assets/ig.png'},
-                { id: 4, title: 'X', url: '',img: 'src/assets/x.png'},
-            ]
-        }
-    }
+function mounted() {
+        window.addEventListener('scroll', this.handleScroll)
 }
+
+function destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
+}
+
+
+const info = {
+    name: 'Chen Yen-Cheng',
+    title: 'Student at CS department of NTHU',
+    img: 'src/assets/me.jpg',
+    phone: ' (+886) 965-651-317',
+    email: 'kevin20010808@gmail.com',
+}
+const icon_items = [
+    { id: 1, title: 'discord', url: 'https://discord.com/'  , img: 'src/assets/discord.png'},
+    { id: 2, title: 'Github', url: 'https://github.com/kevin20010808', img: 'src/assets/github.png'},
+    { id: 3, title: 'Instagram' , url: '', img: 'src/assets/ig.png'},
+    { id: 4, title: 'X', url: '',img: 'src/assets/x.png'},
+]
+const theworks = []
+
 </script>
 
 <style>
@@ -86,7 +79,7 @@ export default {
     background-color: #E0E0E2;
     color: #56494C;
     padding: 10px;
-    height:60vh;
+    height: 62vh;
     border-radius: 10px;
     text-align: center;
 }
@@ -101,11 +94,11 @@ export default {
     display: flex; 
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 70vh;
     color: white;
 }
 
-.items {
+.icon_items {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +107,7 @@ export default {
     color: #56494C;
 }
 
-.items li {
+.icon_items li {
     margin: 0 15px;
     border-radius: 10px;
     transition: all 0.3s;
