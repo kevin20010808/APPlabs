@@ -5,10 +5,10 @@
             <li v-for="work in works" :key="work.id">
                 <h1> {{ work.title }} </h1>
                 <p> {{ work.description }} </p>
-                <!-- <img :src="work.image" class="icon"/> -->
             </li>
         </div>
     </div>
+
 </template>
 
 <script setup>
@@ -29,6 +29,8 @@ const works = [
         image: 'https://via.placeholder.com/150'
     }
 ]
+
+
 
 </script>
 

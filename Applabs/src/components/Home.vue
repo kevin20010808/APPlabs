@@ -14,7 +14,7 @@
     </div>
     <div class="home">
         <div class="works">
-            <h1>Works</h1>
+            <h1>Related Works</h1>
             <div class="theworks">
                 <li v-for="work in works" :key="work.id">
                     <a :href="work.url" target="_blank">
@@ -46,16 +46,6 @@
 </template>
 
 <script setup>
-
-function mounted() {
-        window.addEventListener('scroll', this.handleScroll)
-}
-
-function destroyed() {
-    window.removeEventListener('scroll', this.handleScroll)
-}
-
-
 const info = {
     name: 'Chen Yen-Cheng',
     title: 'Student at CS department of NTHU',
@@ -78,14 +68,14 @@ const theworks = []
 .home {
     background-color: #E0E0E2;
     color: #56494C;
-    padding: 10px;
-    height: 62vh;
+    height: 63vh;
     border-radius: 10px;
     text-align: center;
 }
 
+
 .home h1 {
-    margin-top: 60px;
+    padding-top: 40px;
     font-size: 2em;
     font-weight: bold;
 }
@@ -119,7 +109,6 @@ const theworks = []
 
 
 .parallax-container {
-  padding-top: 60px;
   position: relative;
   height: 70vh;
   
@@ -131,12 +120,12 @@ const theworks = []
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     /* put in right center*/
-    margin-left: 50px;
+    margin-left: 30px;
     margin-top: 300px;
 }
 
 .background-img {
-    padding-bottom: 60px;
+    padding-bottom: 55px;
     position: fixed;
     background-color: #B5BAD0;
     /* background-image: url('../assets/background.jpg'); */
@@ -176,7 +165,7 @@ const theworks = []
 }
 
 .contact{
-    margin-top: 27vh;
+    margin-top: 25vh;
     margin-bottom: auto;
 }
 .mail {

@@ -20,14 +20,7 @@ export default {
 
 <style>
 
-.app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin: 0;
-  padding: 0;
-}
+
 
 .navbar {
   background-color: #E0E0E2;
@@ -46,12 +39,9 @@ export default {
 .navbar a{
   text-decoration: none;
   color: #56494C;
-  margin: 0 10px;
+  padding: 0 10px;
 }
 
-nav a.router-link-exact-active {
-  border-color: #131416;
 
-}
 
 </style>
